@@ -1,0 +1,14 @@
+{
+  "name": "article",
+  "script": "./node_modules/nuxt/bin/nuxt.js",
+  "args": "start",
+  "exec_mode": "cluster",
+  "instances": "5",
+  "max_memory_restart" : "200M",
+  "listen_timeout": 30000,
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "env": {
+    "NODE_ENV": "production",
+    "DEBUG": "nuxt:*"
+  }
+}

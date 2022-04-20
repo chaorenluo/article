@@ -1,0 +1,30 @@
+{
+  "name": "article",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@postlight/mercury-parser": "^2.2.1",
+    "ant-design-vue": "^1.7.8",
+    "cookie-universal-nuxt": "^2.1.5",
+    "core-js": "^3.19.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.6.14",
+    "vue-context-menu": "^2.0.6",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/proxy": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "sass": "^1.49.9",
+    "sass-loader": "^10.2.1"
+  }
+}
