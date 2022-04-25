@@ -25,6 +25,9 @@ switch (env) {
       }
     }
     break;
+  case 'production':
+    axios.baseURL ='/api'
+    break;
 }
 
 console.log('proxy---',proxy)
