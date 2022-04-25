@@ -151,7 +151,7 @@
  </div>
 </template>
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapState,mapActions } from "vuex";
 
 export default {
   data(){
@@ -201,6 +201,9 @@ export default {
     }
   },
   methods:{
+    ...mapActions({
+      getCollectionsUser: 'user/getCollectionsUser'
+    }),
     showUser(){
       if(this.is_login){
         this.userShow = true;
@@ -280,11 +283,6 @@ export default {
         this.resourcesData.collection_id = res.data[0].id;
       })
     },
-    getCollectionsUser(){
-      this.$api.collectionsUser().then(res=>{
-        this.userCollection = res.data
-      })
-    },
     getHistoryArticles(){
       if(!this.is_login){
         this.$message.error("请先登录")
@@ -332,9 +330,6 @@ export default {
     if(this.is_login){
       this.getCollectionList()
       this.getCollectionsUser()
-      this.$EventBus.$on("updateSubscribe",()=>{
-        this.getCollectionsUser()
-      })
     }
   },
   watch:{

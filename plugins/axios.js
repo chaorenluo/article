@@ -7,6 +7,11 @@ export default function({ app, error, store }) {
     return config
   });
 
+  $axios.onError(response=>{
+    console.log("---4")
+    error('axios拦截错误')
+  })
+
   $axios.onResponse(response => {
     const code = response.data.status_code;
     const access_token = response.headers.authorization;

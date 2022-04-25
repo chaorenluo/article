@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "subscribe",
   middleware: 'authenticated',
@@ -71,6 +73,9 @@ export default {
     }
   },
   methods:{
+    ...mapActions({
+      getCollectionsUser: 'user/getCollectionsUser'
+    }),
     getCategories(filter_category_id){
       this.$api.categories({}).then(res=>{
         this.categories = res.data;
@@ -111,7 +116,7 @@ export default {
         this.$message.success("订阅成功");
         this.subscribeConfirmLoading=false;
         this.subscribeHandleCancel()
-        this.$EventBus.$emit('updateSubscribe')
+        this.getCollectionsUser()
       })
     },
     subscribeHandleCancel(){
