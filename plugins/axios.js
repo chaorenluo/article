@@ -9,7 +9,9 @@ export default function({ app, error, store }) {
   });
 
   $axios.onError(response=>{
-    console.log("---4")
+    console.log("===========")
+    console.log(response)
+    console.log("===========")
     error('axios拦截错误')
   })
 
