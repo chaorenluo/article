@@ -40,7 +40,7 @@
               </div>
             </div>
             <client-only>
-              <div v-if="is_login" v-for="(item,key) in userCollection" :key="key" class="card-body">
+              <div v-if="is_login" v-for="(item,key) in user.userCollection" :key="key" class="card-body">
                 <div class="space-between ">
                   <div class="font14">{{item.name}}</div>
                 </div>

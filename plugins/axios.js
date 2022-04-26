@@ -4,7 +4,6 @@ export default function({ app, error, store }) {
   $axios.onRequest(config => {
     const access_token = app.$cookies.get('access_token')
     config.headers['Authorization']='Bearer '+access_token;
-    console.log("Authorization---",access_token)
     return config
   });
 
