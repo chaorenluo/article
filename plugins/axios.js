@@ -24,9 +24,6 @@ export default function({ app, error, store }) {
       return Promise.reject({ response });
       // throw new Error('您還未登入，請登入後操作')
     }
-    if(code!=200 && process.browser){
-       alert(response.data.message)
-    }
     return response.data;
   });
 }

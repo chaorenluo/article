@@ -1,6 +1,6 @@
 const env = process.env.NODE_ENV || 'dev';
 
-let API_URL = 'http://aggregation.yoosoul.com/api';
+let API_URL = 'http://article.yoosoul.com/api';
 const axios = {
   baseURL: API_URL,
   credentials: true
@@ -10,7 +10,7 @@ const server = {
   host: '0.0.0.0'
 };
 let proxy ={}
-console.log('env---',env)
+
 switch (env) {
   case 'dev':
     axios.proxy = true;
@@ -25,12 +25,9 @@ switch (env) {
       }
     }
     break;
-  case 'production':
-    axios.baseURL ='/api'
-    break;
 }
 
-console.log('proxy---',proxy)
+
 
 
 

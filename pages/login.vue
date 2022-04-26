@@ -155,7 +155,7 @@ export default {
                 this.$router.replace('/')
               })
             }else{
-              this.$message.success(res.message)
+              this.$message.error(res.message)
             }
 
           })
